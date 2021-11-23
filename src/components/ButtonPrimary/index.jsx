@@ -3,7 +3,7 @@ import "./style.css"
 
 import React from "react"
 
-const ButtonPrimary = () =>{
+const ButtonPrimary = ({children}) =>{
     return(
         <Button
             styles="bg-green
@@ -14,7 +14,7 @@ const ButtonPrimary = () =>{
             border-2 border-green
             hover:border-2
             hover:border-green-dark">
-            Sign In
+            {children}
         </Button>
     )
 }

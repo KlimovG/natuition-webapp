@@ -8,7 +8,7 @@ module.exports = {
       current: 'currentColor',
       green: {
         light: '#EBFFD9',
-        DEFAULT: '#81BF45',
+        DEFAULT: '#3BAB36',
         dark: '#256320'
       },
       gray: {

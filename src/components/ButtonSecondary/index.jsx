@@ -1,11 +1,22 @@
 import "./style.css"
 import React from "react"
+import Button from '../Button'
 
-const ButtonSecondary = () => {
+const ButtonSecondary = ({children}) => {
     return (
-        <button className="py-4 px-6 bg-green rounded text-base Montserrat-Regular shadow-primary-btn hover:shadow-none transition duration-300">
-            Button
-        </button>
+        <Button
+            styles="
+
+            text-green-dark
+            shadow-secondary-btn
+            text-green-dark
+            border-green-dark
+            border-2
+            hover:bg-green-dark
+            hover:text-white
+            hover:shadow-none">
+            {children}
+        </Button>
     )
 }
 
