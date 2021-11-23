@@ -6,6 +6,7 @@ import Row from "../../components/Row";
 import Box from "../../components/Box";
 import Logo from "../../components/Logo";
 import { useHistory } from "react-router-dom";
+import InputText from "../../components/InputText";
 
 const Home = ({ children, styles }) => {
   const history = useHistory();
@@ -31,6 +32,7 @@ const Home = ({ children, styles }) => {
       <Row styles={"mx-auto flex-col gap-4"}>
         <ButtonPrimary handleClick={toPage}>Sign in</ButtonPrimary>
         <ButtonSecondary handleClick={toPage}>Sign up</ButtonSecondary>
+        <InputText> Email</InputText>
       </Row>
     </Container>
   );
