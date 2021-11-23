@@ -6,7 +6,6 @@ import Row from "../../components/Row";
 import Box from "../../components/Box";
 import Logo from "../../components/Logo";
 import { useHistory } from "react-router-dom";
-import InputText from "../../components/InputText";
 
 const Home = ({ children, className }) => {
   const history = useHistory();

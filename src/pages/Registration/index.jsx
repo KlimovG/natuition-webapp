@@ -25,7 +25,7 @@ const Registration = ({ children, className }) => {
     }
   };
   return (
-    <Container className="flex flex-col justify-center items-center">
+    <Container className="flex flex-col h-full justify-center items-center">
       <Box className={"flex w-64 mb-6"}>
         <Logo />
       </Box>

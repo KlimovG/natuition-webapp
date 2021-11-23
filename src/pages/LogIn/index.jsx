@@ -25,7 +25,7 @@ const Login = ({ children, className }) => {
     }
   };
   return (
-    <Container className="flex flex-col justify-center items-center">
+    <Container className="flex h-full flex-col justify-center items-center">
       <Box className={"flex w-64 mb-8"}>
         <Logo />
       </Box>
