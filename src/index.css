@@ -39,3 +39,8 @@ html{
     font-family: "Montserrat", serif;
     font-weight: bold;
 }
+
+img {
+    @apply max-w-full max-h-full
+
+}
