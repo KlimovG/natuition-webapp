@@ -1,13 +1,41 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+    font-size: 16px;
+    font-family: "Hind Madurai", serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.HindMadurai-Light{
+    font-family: "Hind Madurai", serif;
+    font-weight: 300;
+}
+.HindMadurai-Regular{
+    font-family: "Hind Madurai", serif;
+    font-weight: 400;
+}
+.HindMadurai-Medium{
+    font-family: "Hind Madurai", serif;
+    font-weight: 500;
+}
+
+.Montserrat-Regular{
+    font-family: "Montserrat", serif;
+    font-weight: 400;
+}
+
+.Montserrat-Medium{
+    font-family: "Montserrat", serif;
+    font-weight: 500;
+}
+
+.Montserrat-SemiBold{
+    font-family: "Montserrat", serif;
+    font-weight: 600;
+}
+
+.Montserrat-Bold{
+    font-family: "Montserrat", serif;
+    font-weight: bold;
 }
