@@ -2,7 +2,7 @@ import "./style.css";
 import React from "react";
 import Button from "../Button";
 
-const ButtonSecondary = ({ children }) => {
+const ButtonSecondary = ({ children, handleClick }) => {
   return (
     <Button
       styles="
@@ -14,6 +14,7 @@ const ButtonSecondary = ({ children }) => {
             hover:bg-green-dark
             hover:text-white
             hover:shadow-none"
+      handleClick={handleClick}
     >
       {children}
     </Button>

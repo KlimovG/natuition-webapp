@@ -1,9 +1,8 @@
 import Button from "../Button";
-import "./style.css";
 
 import React from "react";
 
-const ButtonPrimary = ({ children }) => {
+const ButtonPrimary = ({ children, handleClick }) => {
   return (
     <Button
       styles="bg-green
@@ -13,6 +12,7 @@ const ButtonPrimary = ({ children }) => {
             hover:bg-green-dark
             hover:border-2
             hover:border-green-dark"
+      handleClick={handleClick}
     >
       {children}
     </Button>
