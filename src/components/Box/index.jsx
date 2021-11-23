@@ -1,10 +1,6 @@
-import React from "react"
-const Box = ({children, styles}) => {
-    return (
-        <div className={"mx-auto " + (styles || null)}>
-            {children}
-        </div>
-    )
-}
+import React from "react";
+const Box = ({ children, className }) => {
+  return <div className={"mx-auto " + (className || null)}>{children}</div>;
+};
 
 export default Box;

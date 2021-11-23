@@ -8,17 +8,17 @@ import Logo from "../../components/Logo";
 import { useHistory } from "react-router-dom";
 import InputText from "../../components/InputText";
 
-const Home = ({ children, className }) => {
+const Registration = ({ children, className }) => {
   const history = useHistory();
   //function to bring users to login or registration pages
   const toPage = (e) => {
     const value = e.target.innerText.toLowerCase();
     switch (value) {
       case "sign in":
-        history.push("./login");
+        history.push("./main");
         break;
-      case "sign up":
-        history.push("./registration");
+      case "decline":
+        history.push("/");
         break;
       default:
         return;
@@ -26,15 +26,22 @@ const Home = ({ children, className }) => {
   };
   return (
     <Container className="flex flex-col justify-center items-center">
-      <Box className={"flex w-64 mb-8"}>
+      <Box className={"flex w-64 mb-6"}>
         <Logo />
       </Box>
+      <Row className={"flex-col gap-4 mb-8"}>
+        <InputText>Name</InputText>
+        <InputText>Email</InputText>
+        <InputText>Phone</InputText>
+        <InputText>Password</InputText>
+        <InputText>Password</InputText>
+      </Row>
       <Row className={"mx-auto flex-col gap-4"}>
-        <ButtonPrimary handleClick={toPage}>Sign in</ButtonPrimary>
-        <ButtonSecondary handleClick={toPage}>Sign up</ButtonSecondary>
+        <ButtonPrimary handleClick={toPage}>Create account</ButtonPrimary>
+        <ButtonSecondary handleClick={toPage}>Decline</ButtonSecondary>
       </Row>
     </Container>
   );
 };
 
-export default Home;
+export default Registration;

@@ -5,7 +5,7 @@ import React from "react";
 const ButtonPrimary = ({ children, handleClick }) => {
   return (
     <Button
-      styles="bg-green
+      className="bg-green
             shadow-primary-btn
             text-white
             border-2 border-green

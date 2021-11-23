@@ -5,7 +5,7 @@ import Button from "../Button";
 const ButtonSecondary = ({ children, handleClick }) => {
   return (
     <Button
-      styles="
+      className="
             text-green-dark
             shadow-secondary-btn
             text-green-dark
