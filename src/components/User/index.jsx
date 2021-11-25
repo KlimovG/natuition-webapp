@@ -1,5 +1,4 @@
 import React from "react";
-import Box from "../Box";
 import Row from "../Row";
 import ButtonPrimary from "../ButtonPrimary";
 

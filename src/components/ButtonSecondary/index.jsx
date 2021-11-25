@@ -11,9 +11,9 @@ const ButtonSecondary = ({ children, handleClick }) => {
             text-green-dark
             border-green-dark
             border-2
-            hover:bg-green-dark
-            hover:text-white
-            hover:shadow-none"
+            active:bg-green-dark
+            active:text-white
+            active:shadow-none"
       handleClick={handleClick}
     >
       {children}

@@ -14,10 +14,10 @@ const Home = ({ children, className }) => {
     const value = e.target.innerText.toLowerCase();
     switch (value) {
       case "sign in":
-        history.push("./login");
+        history.push("./home/login");
         break;
       case "sign up":
-        history.push("./registration");
+        history.push("./home/registration");
         break;
       default:
         return;

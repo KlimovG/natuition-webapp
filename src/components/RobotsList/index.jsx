@@ -1,30 +1,34 @@
 import React from "react";
-import Row from "../Row";
 import TitleBig from "../Title";
 import Box from "../Box";
 import ButtonPrimary from "../ButtonPrimary";
 import ButtonRobot from "../ButtonRobot";
-import ArrowLeft from "./arrow-left.svg";
+import Column from "../Column";
 
 const RobotsList = () => {
   const names = ["SN004", "SN005", "SN006"];
   return (
-    <Row
+    <Column
       className={
-        "w-1/4 p-6 h-full bg-gray-light flex-col relative rounded-2xl overflow-hidden"
+        "w-1/4 p-6 h-full bg-gray-light relative rounded-2xl overflow-hidden mr-6"
       }
     >
+      {/*<ButtonArrow*/}
+      {/*  position={" top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"}*/}
+      {/*/>*/}
       <TitleBig className={"justify-self-start"}>Robots</TitleBig>
-      <Box className={"flex flex-col overflow-y-scroll gap-2 w-full mt-3"}>
-        {names.map((robot) => {
+      <Box className={"flex flex-col overflow-y-auto gap-2 w-full mt-3"}>
+        {names.map((robot, i) => {
           return (
-            <ButtonRobot className={"Montserrat-SemiBold"}>{robot}</ButtonRobot>
+            <ButtonRobot key={i} className={""}>
+              {robot}
+            </ButtonRobot>
           );
         })}
       </Box>
       <Box
         className={
-          "absolute bottom-0 left-0 w-full flex justify-center items-center py-6 bg-green-light"
+          "absolute bottom-0 left-0 w-full flex justify-center items-center py-6 bg-green-bg"
         }
       >
         <ButtonPrimary className={"flex items-center uppercase font-bold"}>
@@ -41,8 +45,7 @@ const RobotsList = () => {
           </svg>
         </ButtonPrimary>
       </Box>
-    </Row>
+    </Column>
   );
 };
-
 export default RobotsList;

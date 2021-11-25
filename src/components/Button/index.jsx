@@ -4,9 +4,11 @@ import React from "react";
 const Button = ({ children, className, handleClick }) => {
   return (
     <button
-      onClick={(e) => handleClick(e)}
+      onClick={(e) => {
+        if (handleClick) return handleClick(e);
+      }}
       className={
-        "py-4 px-6 rounded text-base Montserrat-Regular hover:shadow-none transition duration-300 " +
+        "py-4 px-6 rounded text-base Montserrat-Regular active:shadow-none active:bg-white transition duration-300 " +
         (className || "")
       }
     >

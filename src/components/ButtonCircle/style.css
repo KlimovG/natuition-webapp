@@ -1,0 +1,4 @@
+
+.sessions-list input[type="radio"]:checked + label{
+    @apply bg-green text-white
+}

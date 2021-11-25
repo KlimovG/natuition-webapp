@@ -12,10 +12,10 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route exact path="home/login">
+        <Route exact path="/home/login">
           <Login />
         </Route>
-        <Route exact path="home/registration">
+        <Route exact path="/home/registration">
           <Registration />
         </Route>
         <Route exact path="/main">

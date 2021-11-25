@@ -15,7 +15,7 @@ const Login = ({ children, className }) => {
     const value = e.target.innerText.toLowerCase();
     switch (value) {
       case "sign in":
-        history.push("./main");
+        history.push("/main");
         break;
       case "decline":
         history.push("/");
