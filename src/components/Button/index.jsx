@@ -8,7 +8,7 @@ const Button = ({ children, className, handleClick }) => {
         if (handleClick) return handleClick(e);
       }}
       className={
-        "py-4 px-6 rounded text-base Montserrat-Regular active:shadow-none active:bg-white transition duration-300 " +
+        "py-4 px-6 rounded text-base Montserrat-Regular transition duration-300 " +
         (className || "")
       }
     >

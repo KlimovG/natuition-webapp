@@ -2,7 +2,7 @@ import React from "react";
 import Column from "../Column";
 import TitleBig from "../Title";
 import Box from "../Box";
-import ButtonRobot from "../ButtonRobot";
+import ButtonSession from "../ButtonSession";
 import ButtonCircle from "../ButtonCircle";
 
 const SessionsList = (props) => {
@@ -19,9 +19,9 @@ const SessionsList = (props) => {
       <Box className={"flex flex-col overflow-y-auto gap-2 w-full mt-3"}>
         {sessions.map((robot, i) => {
           return (
-            <ButtonRobot key={i} className={""}>
+            <ButtonSession key={i} className={""}>
               Session {robot}
-            </ButtonRobot>
+            </ButtonSession>
           );
         })}
       </Box>
