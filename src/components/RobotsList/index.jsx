@@ -1,5 +1,5 @@
 import React from "react";
-import TitleBig from "../Title";
+import TitleBig from "../TitleBig";
 import Box from "../Box";
 import ButtonPrimary from "../ButtonPrimary";
 import ButtonRobot from "../ButtonRobot";

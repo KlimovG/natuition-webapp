@@ -1,9 +1,10 @@
 import React from "react";
 import Column from "../Column";
-import TitleBig from "../Title";
+import TitleBig from "../TitleBig";
 import Box from "../Box";
 import ButtonSession from "../ButtonSession";
-import ButtonCircle from "../ButtonCircle";
+import ButtonSecondary from "../ButtonSecondary";
+import ButtonCheckboxCircle from "../ButtonCheckboxCircle";
 
 const SessionsList = (props) => {
   const sessions = ["1", "2", "3"];
@@ -32,7 +33,7 @@ const SessionsList = (props) => {
       >
         {filter.map((period, i) =>
           i === 0 ? (
-            <ButtonCircle
+            <ButtonCheckboxCircle
               checked
               key={i}
               name={"filterByPeriod"}
@@ -42,9 +43,9 @@ const SessionsList = (props) => {
               }
             >
               {period}
-            </ButtonCircle>
+            </ButtonCheckboxCircle>
           ) : (
-            <ButtonCircle
+            <ButtonCheckboxCircle
               key={i}
               name={"filterByPeriod"}
               id={i}
@@ -53,7 +54,7 @@ const SessionsList = (props) => {
               }
             >
               {period}
-            </ButtonCircle>
+            </ButtonCheckboxCircle>
           )
         )}
       </Box>

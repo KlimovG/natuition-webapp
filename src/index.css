@@ -49,7 +49,8 @@ body {
 }
 
 #root{
-    width: 1176px;
-    height: 824px;
+    width: 100%;
+    max-width: 1180px;
+    height: 800px;
     @apply bg-white m-auto rounded-2xl p-6 lg:my-8
 }

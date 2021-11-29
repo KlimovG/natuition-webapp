@@ -1,0 +1,3 @@
+.button__map-type.active{
+    @apply bg-green text-white
+}
