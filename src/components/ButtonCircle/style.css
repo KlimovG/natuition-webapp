@@ -1,4 +1,3 @@
-
-.sessions-list input[type="radio"]:checked + label{
+.sessions__btn-filter.active {
     @apply bg-green text-white
 }

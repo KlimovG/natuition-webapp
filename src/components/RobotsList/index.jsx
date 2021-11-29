@@ -17,7 +17,7 @@ const RobotsList = () => {
       {/*  position={" top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"}*/}
       {/*/>*/}
       <TitleBig className={"justify-self-start"}>Robots</TitleBig>
-      <Box className={"flex flex-col overflow-y-auto gap-2 w-full mt-3"}>
+      <Box className={"flex flex-col overflow-x-visible gap-2 w-full mt-3"}>
         {names.map((robot, i) => {
           return (
             <ButtonRobot key={i} className={""}>

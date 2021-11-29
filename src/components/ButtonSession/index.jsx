@@ -5,7 +5,7 @@ const ButtonSession = ({ children, className }) => {
   return (
     <Button
       className={
-        "flex justify-between items-center bg-white border-2 border-green-dark text-green-dark hover:bg-green-dark w-full hover:text-white active:bg-green-dark w-full active:text-white Montserrat-SemiBold rounded-lg " +
+        "w-11/12 flex justify-between items-center bg-white border-2 border-green-dark text-green-dark hover:bg-green-dark w-full hover:text-white active:bg-green-dark w-full active:text-white Montserrat-SemiBold rounded-lg " +
         (className || "")
       }
     >
