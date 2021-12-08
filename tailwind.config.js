@@ -42,4 +42,7 @@ module.exports = {
     },
   },
   plugins: [],
+  eslint: {
+    enable: null,
+  },
 };
