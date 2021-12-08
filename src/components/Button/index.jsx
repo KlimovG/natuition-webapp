@@ -1,7 +1,7 @@
 import "./style.css";
 import React from "react";
 
-const Button = ({ children, className, handleClick }) => {
+const Button = ({ children, className, handleClick, num }) => {
   return (
     <button
       onClick={(e) => {
@@ -11,6 +11,7 @@ const Button = ({ children, className, handleClick }) => {
         "py-4 px-6 rounded text-base Montserrat-Regular transition duration-300 " +
         (className || "")
       }
+      data-num={num || null}
     >
       {children}
     </button>

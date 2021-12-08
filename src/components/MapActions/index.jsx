@@ -1,7 +1,7 @@
 import React from "react";
 import Row from "../Row";
 import "./style.css";
-const MapActions = () => {
+const MapActions = ({ toggleFullScreen, isFullScreen }) => {
   return (
     <Row className={"absolute bottom-6 right-6 space-x-3"}>
       <button className={"map-action__btn"}>
@@ -24,7 +24,10 @@ const MapActions = () => {
           />
         </svg>
       </button>
-      <button className={"map-action__btn"}>
+      <button
+        className={"map-action__btn " + (isFullScreen ? " active" : "")}
+        onClick={toggleFullScreen}
+      >
         <svg
           className={"h-4 w-4 fill-current stroke-current"}
           viewBox="0 0 24 24"

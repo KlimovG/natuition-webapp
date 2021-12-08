@@ -9,7 +9,7 @@ const ButtonCircle = ({ children, className, name, activeType, onClick }) => {
         className +
         (name === activeType ? " active" : "")
       }
-      activeType={activeType}
+      data-active={activeType}
       name={name}
       onClick={(e) => onClick(e)}
     >

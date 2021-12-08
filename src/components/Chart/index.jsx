@@ -1,22 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import Column from "../Column";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Chart = () => {
+const Chart = ({ extractionsData }) => {
+  const [extractedLabels, setExtractedLabels] = useState([
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+  ]);
+  const [extractedNumbers, setExtractedNumbers] = useState([
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+  ]);
+  useEffect(() => {
+    if (extractionsData) {
+      setExtractedLabels(Object.keys(extractionsData));
+      setExtractedNumbers(Object.values(extractionsData));
+    }
+    // console.log(typeof extractionsData);
+  }, [extractionsData]);
   const data = {
-    labels: [
-      "Plantain great",
-      "Dandellion",
-      "Daisy",
-      "Plantain narrowleaf",
-      "Porcelle",
-    ],
+    labels: extractedLabels,
     datasets: [
       {
         label: "# of Votes",
-        data: [12, 19, 3, 5, 2],
+        data: extractedNumbers,
         backgroundColor: [
           "rgba(116, 224, 110, 0.7)",
           "rgba(191, 245, 188, 0.7)",
