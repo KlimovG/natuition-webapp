@@ -14,6 +14,13 @@ const Main = () => {
   const [isSessionDataLoaded, setIsSessionDataLoaded] = useState(false);
   const [robots, setRobots] = useState([]);
   const [activeRobot, setActiveRobot] = useState("");
+  const [mapType, setMapType] = useState("");
+  // function to toggle a map type
+  const toggleMapType = (e) => {
+    const name = e.currentTarget.name;
+    setMapType(name);
+  };
+
   //Get sessions for one robot
   const getSessionsData = (e) => {
     setIsSessionDataLoaded(true);
@@ -33,6 +40,8 @@ const Main = () => {
   };
   //Get one sessions data
   const getOneSessionData = (e) => {
+    setMapType("");
+
     const sessionsNumber = e.currentTarget.dataset.num;
     console.log(sessionsNumber);
     const getCurrentSession = sessions.find(
@@ -63,12 +72,17 @@ const Main = () => {
           handleClick={getSessionsData}
           activeRobot={activeRobot}
         />
-        <RobotStatistic sessionData={activeSessionData} />
+        <RobotStatistic
+          sessionData={activeSessionData}
+          toggleMapType={toggleMapType}
+          activeMapType={mapType}
+        />
         <SessionsList
           sessionsData={sessions}
           handleClick={getOneSessionData}
           activeSession={activeSession}
           isLoaded={isSessionDataLoaded}
+          cleanMapType={toggleMapType}
         />
       </Row>
     </Box>

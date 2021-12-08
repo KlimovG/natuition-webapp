@@ -6,11 +6,15 @@ import StatisticsOfExtractions from "../StatisticsOfExtractions";
 import ButtonMapType from "../ButtonMapType";
 import MapView from "../MapView";
 
-const RobotStatistic = ({ sessionData }) => {
+const RobotStatistic = ({ sessionData, toggleMapType, activeMapType }) => {
   const { voltage_at_start, extraction_number, map } = sessionData;
   return (
     <Column className={"p-6 w-1/2"}>
-      <MapView mapData={map} />
+      <MapView
+        mapData={map}
+        toggleMapType={toggleMapType}
+        activeMapType={activeMapType}
+      />
 
       <StatisticsOfExtractions
         statistics={sessionData}
