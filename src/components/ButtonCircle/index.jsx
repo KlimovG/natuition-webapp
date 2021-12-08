@@ -1,36 +1,20 @@
 import React from "react";
 import "./style.css";
-const ButtonCircle = ({ children, className, name, id, checked }) => {
+
+const ButtonCircle = ({ children, className, name, activeType, onClick }) => {
   return (
-    <div className={"relative"}>
-      {checked ? (
-        <input
-          defaultChecked
-          type="radio"
-          name={name}
-          className={`hidden`}
-          value={children}
-          id={"filterRadio" + id}
-        />
-      ) : (
-        <input
-          type="radio"
-          name={name}
-          className={`hidden`}
-          value={children}
-          id={"filterRadio" + id}
-        />
-      )}
-      <label
-        htmlFor={"filterRadio" + id}
-        className={
-          "flex justify-center items-center w-12 h-12 bg-white rounded-full text-center Montserrat-Bold text-xl transition-colors duration-300 cursor-pointer"
-        }
-      >
-        {children}
-      </label>
-    </div>
+    <button
+      className={
+        "sessions__btn-filter h-12 w-12 rounded-full text-center Montserrat-SemiBold" +
+        className +
+        (name === activeType ? " active" : "")
+      }
+      data-active={activeType}
+      name={name}
+      onClick={(e) => onClick(e)}
+    >
+      {children}
+    </button>
   );
 };
-
 export default ButtonCircle;

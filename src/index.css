@@ -49,7 +49,28 @@ body {
 }
 
 #root{
-    width: 1176px;
-    height: 824px;
+    width: 100%;
+    max-width: 1180px;
+    height: 800px;
     @apply bg-white m-auto rounded-2xl p-6 lg:my-8
+}
+/* Variables */
+:root {
+    --primary-main-color: #81BF45;
+    --primary-dark-color: #256320;
+    --primary-light-color: #EBFFD9;
+
+    --black: #060D00;
+    --white: #FBFBFB;
+    --gray-main: #9E9E9E;
+    --gray-dark: #525252;
+    --gray-light: #F2F2F2;
+}
+
+button, a {
+    @apply transition-colors duration-300 focus:outline-none  focus-visible:ring-green focus-visible:ring focus-visible:ring-offset-2
+}
+
+.max-h-42-5 {
+    max-height: 42.5rem;
 }

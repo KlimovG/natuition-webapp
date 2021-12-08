@@ -1,13 +1,18 @@
 import React from "react";
 import Button from "../Button";
 
-const ButtonSession = ({ children, className }) => {
+const ButtonSession = ({ children, className, active, num, handleClick }) => {
   return (
     <Button
       className={
-        "flex justify-between items-center bg-white border-2 border-green-dark text-green-dark hover:bg-green-dark w-full hover:text-white active:bg-green-dark w-full active:text-white Montserrat-SemiBold rounded-lg " +
-        (className || "")
+        "w-11/12 flex justify-between items-center border-2 border-green-dark w-full w-full Montserrat-SemiBold rounded-lg " +
+        (className || "") +
+        (active === num
+          ? "text-white bg-green-dark"
+          : "text-green-dark bg-white hover:bg-green-dark  hover:text-white active:bg-green-dark active:text-white ")
       }
+      num={num}
+      handleClick={handleClick}
     >
       {children}
       <svg

@@ -1,0 +1,7 @@
+.map-action__btn {
+    @apply w-10 h-10 text-white transition-colors duration-300 flex justify-center items-center rounded-full hover:bg-gray-light hover:bg-opacity-50 transition duration-300
+}
+
+.map-action__btn.active {
+    @apply text-green bg-green bg-opacity-10 ring-2 ring-green
+}

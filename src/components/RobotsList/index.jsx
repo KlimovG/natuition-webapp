@@ -1,34 +1,47 @@
-import React from "react";
-import TitleBig from "../Title";
+import React, { useEffect, useState } from "react";
+import TitleBig from "../TitleBig";
 import Box from "../Box";
 import ButtonPrimary from "../ButtonPrimary";
 import ButtonRobot from "../ButtonRobot";
 import Column from "../Column";
 
-const RobotsList = () => {
+const RobotsList = ({ robotsList, handleClick, activeRobot }) => {
   const names = ["SN004", "SN005", "SN006"];
+  const [robots, setRobots] = useState([]);
+
+  useEffect(() => {
+    if (robotsList) {
+      setRobots((prev) => (prev = robotsList));
+    }
+  }, [robotsList]);
   return (
     <Column
       className={
-        "w-1/4 p-6 h-full bg-gray-light relative rounded-2xl overflow-hidden mr-6"
+        "w-1/4 p-6 h-full bg-gray-light relative rounded-2xl overflow-hidden mr-6 max-h-42-5"
       }
     >
       {/*<ButtonArrow*/}
       {/*  position={" top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2"}*/}
       {/*/>*/}
       <TitleBig className={"justify-self-start"}>Robots</TitleBig>
-      <Box className={"flex flex-col overflow-y-auto gap-2 w-full mt-3"}>
-        {names.map((robot, i) => {
+      <Box className={"flex flex-col overflow-x-visible gap-2 w-full mt-3"}>
+        {robots.map((robot, i) => {
           return (
-            <ButtonRobot key={i} className={""}>
-              {robot}
+            <ButtonRobot
+              key={i}
+              className={""}
+              num={robot["_id"]}
+              handleClick={handleClick}
+              active={activeRobot}
+            >
+              {robot["robot_name"]}
             </ButtonRobot>
           );
         })}
       </Box>
       <Box
         className={
-          "absolute bottom-0 left-0 w-full flex justify-center items-center py-6 bg-green-bg"
+          "absolute bottom-0 left-0 w-full flex justify-center items-center py-6 bg-green-bg rounded-b-2xl"
         }
       >
         <ButtonPrimary className={"flex items-center uppercase font-bold"}>
