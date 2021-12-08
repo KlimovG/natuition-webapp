@@ -22,36 +22,35 @@ const Map = ({ className, children, mapData }) => {
   const [currentMarkers, setCurrentMarkers] = useState([]);
   //Map type
   // state to define type of the map
-  const [mapType, setMapType] = useState("gps");
+  const [mapType, setMapType] = useState("");
   // function to toggle a map type
-  const toggleGPSPoints = () => {};
   const toggleMap = (e) => {
     const name = e.currentTarget.name;
     setMapType(name);
   };
-  const toggleFullScreen = () => {
-    if (!isFullScreen) {
-      mapContainer.current.requestFullscreen();
-    } else {
-      document.exitFullscreen();
-    }
-    setIsFullScreen((prev) => (prev = !prev));
-  };
-  const listenerFullscreen = (e) => {
-    if (e.keyCode === 27) {
-      if (isFullScreen) {
-        setIsFullScreen((prev) => (prev = !prev));
-      }
-    }
-  };
-  const escFunction = useCallback((event) => {
-    if (event.keyCode === 27) {
-      console.log("esc pressed");
-      setIsFullScreen(false);
-    }
-  }, []);
+  // const toggleFullScreen = () => {
+  //   if (!isFullScreen) {
+  //     mapContainer.current.requestFullscreen();
+  //   } else {
+  //     document.exitFullscreen();
+  //   }
+  //   setIsFullScreen((prev) => (prev = !prev));
+  // };
+  // const listenerFullscreen = (e) => {
+  //   if (e.keyCode === 27) {
+  //     if (isFullScreen) {
+  //       setIsFullScreen((prev) => (prev = !prev));
+  //     }
+  //   }
+  // };
+  // const escFunction = useCallback((event) => {
+  //   if (event.keyCode === 27) {
+  //     console.log("esc pressed");
+  //     setIsFullScreen(false);
+  //   }
+  // }, []);
   useEffect(() => {
-    document.addEventListener("keydown", escFunction);
+    // document.addEventListener("keydown", escFunction);
     if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
@@ -62,9 +61,9 @@ const Map = ({ className, children, mapData }) => {
     map.current.addControl(
       new mapboxgl.FullscreenControl({ container: fullScreenButton })
     );
-    return () => {
-      document.removeEventListener("keydown", escFunction);
-    };
+    // return () => {
+    //   document.removeEventListener("keydown", escFunction);
+    // };
   }, []);
   useEffect(() => {}, [document.fullscreenElement]);
   useEffect(() => {

@@ -11,10 +11,12 @@ const Main = () => {
   const [sessions, setSessions] = useState([]);
   const [activeSession, setActiveSession] = useState("");
   const [activeSessionData, setActiveSessionData] = useState({});
+  const [isSessionDataLoaded, setIsSessionDataLoaded] = useState(false);
   const [robots, setRobots] = useState([]);
   const [activeRobot, setActiveRobot] = useState("");
   //Get sessions for one robot
   const getSessionsData = (e) => {
+    setIsSessionDataLoaded(true);
     const robotID = e.currentTarget.dataset.num;
     setActiveRobot((prev) => (prev = robotID));
     axios
@@ -22,6 +24,7 @@ const Main = () => {
       .then((res) => {
         // handle success
         setSessions(res.data);
+        setIsSessionDataLoaded(false);
       })
       .catch((error) => {
         // handle error
@@ -65,6 +68,7 @@ const Main = () => {
           sessionsData={sessions}
           handleClick={getOneSessionData}
           activeSession={activeSession}
+          isLoaded={isSessionDataLoaded}
         />
       </Row>
     </Box>

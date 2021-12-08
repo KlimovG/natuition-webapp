@@ -5,8 +5,14 @@ import Box from "../Box";
 import ButtonSession from "../ButtonSession";
 import ButtonSecondary from "../ButtonSecondary";
 import ButtonCircle from "../ButtonCircle";
+import ClipLoader from "react-spinners/ClipLoader";
 
-const SessionsList = ({ sessionsData, handleClick, activeSession }) => {
+const SessionsList = ({
+  sessionsData,
+  handleClick,
+  activeSession,
+  isLoaded,
+}) => {
   const [isActive, setIsActive] = useState(false);
   const [sessions, setSessions] = useState([]);
   useEffect(() => {
@@ -33,7 +39,12 @@ const SessionsList = ({ sessionsData, handleClick, activeSession }) => {
           "flex flex-col gap-2 w-full mt-3 overflow-auto h-full max-h-full px-2 pb-4 "
         }
       >
-        {sessions &&
+        {isLoaded ? (
+          <Box className={"mx-auto my-auto"}>
+            <ClipLoader loading={isLoaded} size={50} />
+          </Box>
+        ) : (
+          sessions &&
           sessions.map((data, i) => {
             return (
               <ButtonSession
@@ -46,7 +57,8 @@ const SessionsList = ({ sessionsData, handleClick, activeSession }) => {
                 Session {i + 1}
               </ButtonSession>
             );
-          })}
+          })
+        )}
       </Box>
       <Box
         className={
