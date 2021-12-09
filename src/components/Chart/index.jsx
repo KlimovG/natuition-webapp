@@ -13,6 +13,9 @@ const Chart = ({ extractionsData }) => {
         Object.keys(extractionsData).map((label) => label.replaceAll("_", " "))
       );
       setExtractedNumbers(Object.values(extractionsData));
+    } else if (!extractionsData) {
+      setExtractedLabels((prevState) => (prevState = []));
+      setExtractedNumbers((prev) => (prev = []));
     }
     // console.log(typeof extractionsData);
   }, [extractionsData]);

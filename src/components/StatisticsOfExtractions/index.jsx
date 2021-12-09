@@ -13,18 +13,38 @@ const StatisticsOfExtractions = ({ statistics, voltage, extractions }) => {
   const [timeLeft, setTimeLeft] = useState("--:--");
   const [totalNumber, setTotalNumber] = useState("---");
   useEffect(() => {
-    if (extractions) {
-      const sumOfExtractions = Object.values(extractions).reduce(
-        (a, b) => a + b
-      );
-      setVoltageAtStart(voltage);
-      setTargetSurface("4500");
-      setCoveredSurface("45");
-      setTimeLeft("04:30");
-      setTotalNumber(sumOfExtractions);
+    if (statistics) {
+      if (extractions) {
+        if (Object.values(extractions).length === 1) {
+          setTotalNumber(Object.values(extractions)[0]);
+        } else {
+          const sumOfExtractions = Object.values(extractions).reduce(
+            (a, b) => a + b
+          );
+          setTotalNumber(sumOfExtractions);
+        }
+      } else if (!extractions || extractions === undefined) {
+        setTotalNumber((prev) => (prev = "---"));
+      }
+      if (!voltage) {
+        setVoltageAtStart((prev) => (prev = "--.-"));
+      } else {
+        setVoltageAtStart((prev) => (prev = voltage));
+        setTargetSurface((prev) => (prev = "4500"));
+        setCoveredSurface((prev) => (prev = "45"));
+        setTimeLeft((prev) => (prev = "04:30"));
+      }
+      if (!extractions & !voltage) {
+        setTargetSurface((prev) => (prev = "----"));
+        setCoveredSurface((prev) => (prev = "--"));
+        setTimeLeft((prev) => (prev = "--:--"));
+      } else if (!extractions && voltage) {
+        setTargetSurface((prev) => (prev = "4500"));
+        setCoveredSurface((prev) => (prev = "45"));
+        setTimeLeft((prev) => (prev = "04:30"));
+      }
     }
-  }, [extractions]);
-  // useEffect();
+  }, [statistics, voltage, extractions]);
   return (
     <Column className={"mt-auto"}>
       <Row>
