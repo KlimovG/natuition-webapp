@@ -71,7 +71,7 @@ const Main = () => {
   return (
     <Box className={"w-full h-full flex flex-col self-start "}>
       <Header />
-      <Row className={"flex-1 justify-between"}>
+      <Row className={"flex-1 justify-between items-stretch"}>
         <RobotsList
           robotsList={robots}
           handleClick={getSessionsData}

@@ -17,7 +17,7 @@ const RobotsList = ({ robotsList, handleClick, activeRobot, isLoading }) => {
   return (
     <Column
       className={
-        "w-1/4 p-6 h-full bg-gray-light relative rounded-2xl overflow-hidden mr-6 max-h-42-5"
+        "w-1/4 p-6 h-auto bg-gray-light relative rounded-2xl overflow-hidden xl:mr-6 max-h-42-5"
       }
     >
       {/*<ButtonArrow*/}

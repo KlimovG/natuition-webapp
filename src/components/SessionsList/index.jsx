@@ -30,7 +30,7 @@ const SessionsList = ({
   return (
     <Column
       className={
-        "sessions-list w-1/4 px-4 py-6 h-auto bg-gray-light relative rounded-2xl overflow-hidden ml-6 max-h-42-5  pb-24"
+        "sessions-list w-1/4 px-4 py-6 h-auto bg-gray-light relative rounded-2xl overflow-hidden xl:ml-6 max-h-42-5  pb-24"
       }
     >
       <TitleBig className={"justify-self-start px-2"}>Sessions</TitleBig>

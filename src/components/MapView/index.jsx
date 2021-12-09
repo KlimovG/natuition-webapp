@@ -13,7 +13,7 @@ const MapView = ({ mapData, toggleMapType, activeMapType }) => {
     <Column className={""}>
       <TitleBig>Map view</TitleBig>
       {!mapData ? (
-        <Box className={"w-1/2 mt-16"}>
+        <Box className={"w-1/2 xl:mt-16 mt-auto p-8"}>
           <Logo />
         </Box>
       ) : (

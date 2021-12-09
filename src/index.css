@@ -3,10 +3,31 @@
 @tailwind utilities;
 
 html{
-    font-size: 16px;
+    font-size: 12px;
     font-family: "Hind Madurai", serif;
+    /*@apply lg:text*/
 }
 
+
+
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media (min-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1280px) {
+    html {
+        font-size: 16px;
+    }
+}
 .HindMadurai-Light{
     font-family: "Hind Madurai", serif;
     font-weight: 300;
@@ -45,14 +66,14 @@ img {
 }
 
 body {
-    @apply bg-gray-light
+    @apply bg-gray-light h-screen w-screen flex items-center justify-center
 }
 
 #root{
-    width: 100%;
+    width: 95%;
     max-width: 1180px;
-    height: 800px;
-    @apply bg-white m-auto rounded-2xl p-6 lg:my-8
+    max-height: 800px;
+    @apply bg-white m-auto rounded-2xl p-6 lg:m-auto
 }
 /* Variables */
 :root {
