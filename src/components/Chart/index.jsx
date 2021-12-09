@@ -5,23 +5,13 @@ import Column from "../Column";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Chart = ({ extractionsData }) => {
-  const [extractedLabels, setExtractedLabels] = useState([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-  ]);
-  const [extractedNumbers, setExtractedNumbers] = useState([
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-  ]);
+  const [extractedLabels, setExtractedLabels] = useState([]);
+  const [extractedNumbers, setExtractedNumbers] = useState([]);
   useEffect(() => {
     if (extractionsData) {
-      setExtractedLabels(Object.keys(extractionsData));
+      setExtractedLabels(
+        Object.keys(extractionsData).map((label) => label.replaceAll("_", " "))
+      );
       setExtractedNumbers(Object.values(extractionsData));
     }
     // console.log(typeof extractionsData);

@@ -13,6 +13,7 @@ const Main = () => {
   const [activeSessionData, setActiveSessionData] = useState({});
   const [isSessionDataLoaded, setIsSessionDataLoaded] = useState(false);
   const [robots, setRobots] = useState([]);
+  const [isRobotLoading, setIsRobotLoading] = useState(false);
   const [activeRobot, setActiveRobot] = useState("");
   const [mapType, setMapType] = useState("");
   // function to toggle a map type
@@ -52,11 +53,15 @@ const Main = () => {
     setActiveSessionData(getCurrentSession);
   };
   useEffect(() => {
+    if (!robots) {
+      setIsRobotLoading(true);
+    }
     axios
       .get("https://natuition-fleet-api.herokuapp.com/robot")
       .then((res) => {
         // handle success
         setRobots(res.data);
+        setIsRobotLoading(false);
       })
       .catch((error) => {
         // handle error
@@ -71,6 +76,7 @@ const Main = () => {
           robotsList={robots}
           handleClick={getSessionsData}
           activeRobot={activeRobot}
+          isLoading={isRobotLoading}
         />
         <RobotStatistic
           sessionData={activeSessionData}

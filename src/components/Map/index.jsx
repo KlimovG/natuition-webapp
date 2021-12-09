@@ -223,11 +223,11 @@ const Map = ({
     <Box className={"" + className}>
       <div ref={mapContainer} className="map-container h-full">
         {" "}
-        <MapActions
-          // toggleFullScreen={toggleFullScreen}
-          isFullScreen={isFullScreen}
-          fullScreenButton={fullScreenButton}
-        />
+        {/*<MapActions*/}
+        {/*  // toggleFullScreen={toggleFullScreen}*/}
+        {/*  isFullScreen={isFullScreen}*/}
+        {/*  fullScreenButton={fullScreenButton}*/}
+        {/*/>*/}
       </div>
       <Column className={"space-y-4 absolute top-4 left-4"}>
         <ButtonMapType

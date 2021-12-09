@@ -4,9 +4,9 @@ import Box from "../Box";
 import ButtonPrimary from "../ButtonPrimary";
 import ButtonRobot from "../ButtonRobot";
 import Column from "../Column";
+import ClipLoader from "react-spinners/ClipLoader";
 
-const RobotsList = ({ robotsList, handleClick, activeRobot }) => {
-  const names = ["SN004", "SN005", "SN006"];
+const RobotsList = ({ robotsList, handleClick, activeRobot, isLoading }) => {
   const [robots, setRobots] = useState([]);
 
   useEffect(() => {
@@ -25,19 +25,25 @@ const RobotsList = ({ robotsList, handleClick, activeRobot }) => {
       {/*/>*/}
       <TitleBig className={"justify-self-start"}>Robots</TitleBig>
       <Box className={"flex flex-col overflow-x-visible gap-2 w-full mt-3"}>
-        {robots.map((robot, i) => {
-          return (
-            <ButtonRobot
-              key={i}
-              className={""}
-              num={robot["_id"]}
-              handleClick={handleClick}
-              active={activeRobot}
-            >
-              {robot["robot_name"]}
-            </ButtonRobot>
-          );
-        })}
+        {isLoading ? (
+          <Box className={"mx-auto my-auto"}>
+            <ClipLoader loading={isLoading} size={50} />
+          </Box>
+        ) : (
+          robots.map((robot, i) => {
+            return (
+              <ButtonRobot
+                key={i}
+                className={""}
+                num={robot["_id"]}
+                handleClick={handleClick}
+                active={activeRobot}
+              >
+                {robot["robot_name"]}
+              </ButtonRobot>
+            );
+          })
+        )}
       </Box>
       <Box
         className={

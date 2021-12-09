@@ -30,7 +30,6 @@ const Home = ({ children, className }) => {
       </Box>
       <Row className={"mx-auto flex-col gap-4"}>
         <ButtonPrimary handleClick={toPage}>Sign in</ButtonPrimary>
-        <ButtonSecondary handleClick={toPage}>Sign up</ButtonSecondary>
       </Row>
     </Container>
   );
